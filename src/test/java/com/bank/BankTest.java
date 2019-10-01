@@ -36,7 +36,20 @@ public class BankTest {
         user.addAccount(account);
         assertEquals(lengthBefore+1, this.bank.getAccounts().size());
         assertEquals(lengthBeforeUser+1, user.accounts.size());
-        System.out.println("testAddAccount() successful");
+    }
+
+    // Duplicate test for Clone detection
+    @Test
+    public void testNewAccount() {
+        setUp();
+        int lengthBefore = this.bank.getAccounts().size();
+        User user = this.bank.getUsers().get(0);
+        int lengthBeforeUser = user.accounts.size();
+        Account account = new Account(user, 400.);
+        this.bank.addAccount(account);
+        user.addAccount(account);
+        assertEquals(lengthBeforeUser+1, user.accounts.size());
+        assertEquals(lengthBefore+1, this.bank.getAccounts().size());
     }
 
     @Test(expected = InputMismatchException.class)
