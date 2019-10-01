@@ -96,7 +96,6 @@ public class BankTest {
         setUp();
         User user = this.bank.getUsers().get(0);
         Account acc = user.accounts.get(0);
-        double userMoneyBefore = acc.getMoney();
         double amount = 1000.;
         acc.withdraw(amount);
     }
