@@ -34,8 +34,8 @@ public class BankTest {
         Account account = new Account(user, 200.);
         this.bank.addAccount(account);
         user.addAccount(account);
-        assertEquals(lengthBefore+1, this.bank.getAccounts().size());
         assertEquals(lengthBeforeUser+1, user.accounts.size());
+        assertEquals(lengthBefore+1, this.bank.getAccounts().size());
     }
 
     // Duplicate test for Clone detection
